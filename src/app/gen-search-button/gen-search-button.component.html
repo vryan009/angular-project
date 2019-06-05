@@ -1,0 +1,8 @@
+<form class="form-inline" (ngSubmit)="search()">
+  <i class="fas fa-search" aria-hidden="true"></i>
+  <input [(ngModel)]="inputTextSearch" [ngModelOptions]="{standalone: true}"
+    class="form-control form-control-sm ml-3 w-75" [type]=inputType placeholder="Search" aria-label="Search"/>
+  <button type="submit" (click)="search()" class="btn btn-search" type="button" [disabled]="!inputTextSearch">
+      <i class="glyphicon glyphicon-search"></i>
+  </button>
+</form>

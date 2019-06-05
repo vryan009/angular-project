@@ -1,0 +1,15 @@
+
+<!-- For option picking WITH DEFAULT value as parameter -->
+<div class="form-group">
+  <label for="dropdown">{{LABEL_DROPDOWN}}</label>
+  <select [(ngModel)]="selectedDropdownOption" class="form-control" (change)="onChange($event.target.value)"> 
+    <option ngvalue="null" disabled> {{dropdownOptionDefault}}</option>
+    <option [id]=LABEL_DROPDOWN *ngFor="let option of dropdownOptions; let optionId = index" [value]=option> {{option}}</option>
+  </select>
+</div>
+
+
+<!-- For option picking WITHOUT parameter
+  and then change selectedDropdownOption to non-Input() variable
+  and then change onChange() to optionId handling -->
+<!-- [value]="optionId" "> {{option}}</option> -->

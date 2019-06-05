@@ -1,0 +1,26 @@
+<h4>Search Bar</h4>
+<app-gen-search-button [inputTextSearch]="inputTextSearch" [inputType]="inputType_TEXT"></app-gen-search-button>
+
+<h4>Text</h4>
+<app-gen-input [inputValue]="inputValue_TEXT" [inputType]="inputType_TEXT"> </app-gen-input>
+<h4>Number</h4>
+<app-gen-input [inputValue]="inputValue_NUMBER"[inputType]="inputType_NUMBER"></app-gen-input>
+<h4>Password</h4>
+<app-gen-input [inputValue]="inputValue_TEXT" [inputType]="inputType_PASSWORD"></app-gen-input>
+
+<app-gen-dropdown [LABEL_DROPDOWN]="LABEL_DROPDOWN" [dropdownOptionDefault]="dropdownOptionDefault"
+  [dropdownOptions]="dropdownOptions" [selectedDropdownOption]="selectedDropdownOption">
+</app-gen-dropdown>
+
+<app-gen-list [itemList]="itemList"></app-gen-list>
+<app-gen-ordered-list [itemList]="itemList" [itemListType]="itemListType"></app-gen-ordered-list>
+
+
+<h4>Checkbox</h4>
+<app-gen-checkbox [checkboxDisplayName]="checkboxDisplayName" [checkboxValue]="checkboxValue"></app-gen-checkbox>
+
+<h4>Submit Button</h4>
+<app-gen-button [buttonDisplayName]="buttonDisplayName" [isButtonDisabled]="isButtonDisabled"></app-gen-button>
+
+
+<router-outlet></router-outlet>
