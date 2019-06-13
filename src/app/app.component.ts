@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PATIENTS } from './patient/mock-patient';
 
 @Component({
   selector: 'app-root',
@@ -51,5 +52,7 @@ export class AppComponent {
   I - uppercase Roman number, i - lowercase Roman number*/
   itemListType: String = 'i';
 
+  /* Pass the PATIENT list date to the generic table component*/
+  mockPatients = PATIENTS;
 
 }
