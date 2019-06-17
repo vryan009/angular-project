@@ -12,6 +12,7 @@ import { GenDropdownComponent } from './gen-dropdown/gen-dropdown.component';
 import { GenListComponent } from './gen-list/gen-list.component';
 import { GenOrderedListComponent } from './gen-ordered-list/gen-ordered-list.component';
 import { GenTableComponent } from './gen-table/gen-table.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GenTableComponent } from './gen-table/gen-table.component';
     GenDropdownComponent,
     GenListComponent,
     GenOrderedListComponent,
-    GenTableComponent
+    GenTableComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

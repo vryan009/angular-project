@@ -18,7 +18,7 @@ export class AppComponent {
   inputTextDisplayName: String = 'First Name';
 
   /* Pass the String text to be searched to the generic input component*/
-  inputValue_TEXT: String = 'MEOW';
+  inputValue_TEXT: String = 'Enter username';
   inputValue_NUMBER: Number = 0;
 
   /* Pass the String button type to the generic input component*/

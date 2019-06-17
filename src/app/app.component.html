@@ -1,8 +1,17 @@
-<h4>Search Bar</h4>
-<app-gen-search-button [inputTextSearch]="inputTextSearch" [inputType]="inputType_TEXT"></app-gen-search-button>
 
-<h4>Text</h4>
-<app-gen-input [inputValue]="inputValue_TEXT" [inputType]="inputType_TEXT"> </app-gen-input>
+<app-header> </app-header>
+
+<!-- <h4>Search Bar</h4>
+<app-gen-search-button [inputTextSearch]="inputTextSearch" [inputType]="inputType_TEXT"></app-gen-search-button> -->
+
+<!-- <h4>Text</h4>
+<app-gen-input [inputValue]="inputValue_TEXT" [inputType]="inputType_TEXT"> </app-gen-input> -->
+
+<form>
+  <label>Text</label>
+  <app-gen-input class="col-sm-3" [inputValue]="inputValue_TEXT" [inputType]="inputType_TEXT"></app-gen-input>
+</form>
+
 <h4>Number</h4>
 <app-gen-input [inputValue]="inputValue_NUMBER"[inputType]="inputType_NUMBER"></app-gen-input>
 <h4>Password</h4>
