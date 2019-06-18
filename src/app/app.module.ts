@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GenButtonComponent } from './gen-button/gen-button.component';
@@ -13,6 +15,10 @@ import { GenListComponent } from './gen-list/gen-list.component';
 import { GenOrderedListComponent } from './gen-ordered-list/gen-ordered-list.component';
 import { GenTableComponent } from './gen-table/gen-table.component';
 import { HeaderComponent } from './header/header.component';
+import { PatientComponent } from './patient/patient.component';
+import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
+import { PatientListComponent } from './patient/patient-list/patient-list.component';
+
 
 @NgModule({
   declarations: [
@@ -25,12 +31,17 @@ import { HeaderComponent } from './header/header.component';
     GenListComponent,
     GenOrderedListComponent,
     GenTableComponent,
-    HeaderComponent
+    HeaderComponent,
+    PatientComponent,
+    PatientDetailsComponent,
+    PatientListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
