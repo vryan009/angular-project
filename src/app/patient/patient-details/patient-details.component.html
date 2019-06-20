@@ -1,24 +1,27 @@
 <div class="row">
-  <div class="col-9">
+  <div class="col-9 mt-3">
     <div class="container">
       <div class="row">
         <div class="col-3" style="padding: 5px"> Patient ID </div>
         <div class="col-2" style="padding: 2px">
-          <input [type]=inputType class="form-control" placeholder="ID">
+          <input [type]=inputType class="form-control" *ngIf="!patient.id" readonly placeholder="ID">
+          <input [type]=inputType class="form-control" *ngIf="patient.id" readonly [value]="patient.id">
         </div>
       </div>
       
       <div class="row">
         <div class="col-3" style="padding: 5px"> First Name </div>
         <div class="col-4" style="padding: 2px">
-          <input [type]=inputType class="form-control" placeholder="First Name">
+            <input [type]=inputType class="form-control" *ngIf="!patient.firstName" placeholder="First Name">
+            <input [type]=inputType class="form-control" *ngIf="patient" [value]="patient.firstName">
         </div>
       </div>
       
       <div class="row">
         <div class="col-3" style="padding: 5px"> Last Name </div>
         <div class="col-4" style="padding: 2px">
-          <input [type]=inputType class="form-control" placeholder="Last Name">
+          <input [type]=inputType class="form-control" *ngIf="!patient.lastName" placeholder="Last Name">
+          <input [type]=inputType class="form-control" *ngIf="patient" [value]="patient.lastName">
         </div>
       </div>
       
@@ -29,8 +32,8 @@
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
-                  <input class="form-control" placeholder="yyyy-mm-dd"
-                         name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                  <input id="meow"class="form-control" placeholder="yyyy-mm-dd"
+                         name="dp" [(ngModel)]="patient.birthdate" [value]="patient.birthdate" ngbDatepicker #d="ngbDatepicker">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
                     </button>
@@ -46,13 +49,14 @@
     </div>
   </div>
 
-  <div class="col-3" style="border:1px; border-style:solid; max-width: 150px; max-height: 150px;">
-    <label>PICTURE</label>
+  <div class="col-3 mt-4">
+      <img [src]="patient.img" class="rounded" [alt]="patient.img" style="border:1px; border-style:solid; max-width: 150px; max-height: 150px">
   </div>
 </div>
 
 <hr>
-
-<button type="button" class="btn btn-default">Cancel</button>
-<!-- <button type="button" class="btn btn-danger">Save</button> -->
-<button type="button" class="btn btn-primary">Save</button>
+<form class="" style="float:right">
+  <button type="button" class="btn btn-default mr-2">Cancel</button>
+  <!-- <button type="button" class="btn btn-danger">Save</button> -->
+  <button type="button" class="btn btn-primary mr-2">Save</button>
+</form>

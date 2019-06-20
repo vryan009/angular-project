@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-4">
     <div class="list-group" id="list-tab" role="tablist">
       <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Patient Information</a>
@@ -17,4 +17,27 @@
       <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
     </div>
   </div>
+</div> -->
+
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item" data-toggle="list" list-group-item-action *ngFor="let patient of patients" (click)="onSelectPatient(patient)"> 
+        {{patient.firstName + ' ' + patient.lastName}}
+        <span style="float: right">
+            <img [src]="patient.img" class="rounded" style="max-height:30px" [alt]="patient.img">
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-8" *ngIf="selectedPatient">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" role="tabpanel">
+        <app-patient [patient]="selectedPatient"></app-patient>
+      </div>
+    </div>
+  </div>
 </div>
+
+<hr>

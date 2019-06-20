@@ -2,33 +2,43 @@ import  { Patient } from './patient';
 
 export const PATIENTS: Patient[] = [
     {
+        id: 0,
+        firstName: 'System',
+        middleName: '',
+        lastName: 'Default User',
+        birthdate: '',
+        address: '',
+        contactNumber: '',
+        img: '../assets/images/id0.jpg'
+    },
+    {
         id: 1,
         firstName: 'Jayzon Bryan',
         middleName: 'Padua',
         lastName: 'De Leon',
-        birthdate: '12/15/1994',
+        birthdate: '1994-15-12',
         address: 'Tondo, Manila',
         contactNumber: '09151430951',
-        img: ''
+        img: '../assets/images/id1.jpg'
     },
     {
         id: 2,
-        firstName: 'Ken',
-        middleName: 'Ny',
-        lastName: 'Roggers',
-        birthdate: '01/01/2001',
+        firstName: 'Scarlett',
+        middleName: 'Widow',
+        lastName: 'Johansson',
+        birthdate: '2001-01-01',
         address: 'Ayala, Makati',
         contactNumber: '09122344567',
-        img: ''
+        img: '../assets/images/id2.jpg'
     },
     {
         id: 3,
         firstName: 'Tony',
         middleName: 'Pepper',
         lastName: 'Stark',
-        birthdate: '10/10/2010',
+        birthdate: '2010-10-10',
         address: 'BGC, Taguig',
         contactNumber: '09199876543',
-        img: ''
+        img: '../assets/images/id3.jpg'
     }
 ]
