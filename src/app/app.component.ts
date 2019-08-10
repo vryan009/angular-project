@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PATIENTS } from './patient/mock-patient';
+import { PatientService } from './service/patient.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { PATIENTS } from './patient/mock-patient';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private patientService: PatientService){
+  }
+
   title = 'angular-project';
 
   /* Pass the String button name to be the generic button component*/
@@ -53,6 +57,6 @@ export class AppComponent {
   itemListType: String = 'i';
 
   /* Pass the PATIENT list date to the generic table component*/
-  mockPatients = PATIENTS;
-
+  mockPatients = this.patientService.patientsList;
+  
 }

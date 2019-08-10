@@ -15,13 +15,11 @@ export class GenTableComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log("patient: " + this.mockPatients[0].firstName);
-  }
+  ngOnInit() { }
 
   onSelect(patient: Patient){
     this.selectedPatient = patient;
-    console.log("selected patient:" + this.selectedPatient.id + " " + this.selectedPatient.firstName + " " + this.selectedPatient.lastName);
+    console.log("selected patient:" + this.selectedPatient.getId() + " " + this.selectedPatient.getFirstName() + " " + this.selectedPatient.getLastName);
   }
 
 }

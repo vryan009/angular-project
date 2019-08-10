@@ -18,6 +18,8 @@ import { HeaderComponent } from './header/header.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
+import { MockPatientService } from './service/mock-patient.service';
+import { PatientService } from './service/patient.service';
 
 
 @NgModule({
@@ -41,9 +43,8 @@ import { PatientListComponent } from './patient/patient-list/patient-list.compon
     AppRoutingModule,
     FormsModule,
     NgbModule
-
   ],
-  providers: [],
+  providers: [MockPatientService, PatientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

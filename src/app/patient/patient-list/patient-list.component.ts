@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
 import { PATIENTS } from '../mock-patient';
+import { PatientService } from 'src/app/service/patient.service';
+import { Observable, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-patient-list',
@@ -11,8 +13,8 @@ export class PatientListComponent implements OnInit {
   patients: Patient[];
   selectedPatient: Patient;
 
-  constructor() {
-    this.patients = PATIENTS;
+  constructor(private patientService: PatientService) {
+    this.patients = this.patientService.retrievePatientsList();
     console.log("patients: " + this.patients);
    }
 
@@ -21,7 +23,11 @@ export class PatientListComponent implements OnInit {
   
   onSelectPatient(patient: Patient) {
     this.selectedPatient = patient;
-    console.log("selected Patient: " + this.selectedPatient.firstName);
+    console.log("selected Patient: " + this.selectedPatient.getFirstName());
+  }
+
+  getUpdated(){
+    this.patients = this.patientService.retrievePatientsList();
   }
 
 }

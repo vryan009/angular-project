@@ -13,7 +13,7 @@
         <div class="col-3" style="padding: 5px"> First Name </div>
         <div class="col-4" style="padding: 2px">
             <input [type]=inputType class="form-control" *ngIf="!patient.firstName" placeholder="First Name">
-            <input [type]=inputType class="form-control" *ngIf="patient" [value]="patient.firstName">
+            <input #firstName [type]=inputType class="form-control" *ngIf="patient" [value]="patient.firstName">
         </div>
       </div>
       
@@ -21,7 +21,7 @@
         <div class="col-3" style="padding: 5px"> Last Name </div>
         <div class="col-4" style="padding: 2px">
           <input [type]=inputType class="form-control" *ngIf="!patient.lastName" placeholder="Last Name">
-          <input [type]=inputType class="form-control" *ngIf="patient" [value]="patient.lastName">
+          <input #lastName [type]=inputType class="form-control" *ngIf="patient" [value]="patient.lastName" >
         </div>
       </div>
       
@@ -58,5 +58,5 @@
 <form class="" style="float:right">
   <button type="button" class="btn btn-default mr-2">Cancel</button>
   <!-- <button type="button" class="btn btn-danger">Save</button> -->
-  <button type="button" class="btn btn-primary mr-2">Save</button>
+  <button (click)="onSave()" type="submit" class="btn btn-primary mr-2">Save</button>
 </form>

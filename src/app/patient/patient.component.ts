@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Patient } from './patient';
 
 @Component({
@@ -9,12 +9,17 @@ import { Patient } from './patient';
 export class PatientComponent implements OnInit {
 
   @Input() patient: Patient;
+  @Output() update = new EventEmitter<boolean>();
 
   constructor() {}
 
   ngOnInit() {
-    console.log("On init patient: " + this.patient.firstName);
-    console.log("On init patient: " + this.patient.birthdate);
+    console.log("On init patient: " + this.patient.getFirstName());
+    console.log("On init patient: " + this.patient.getBirthDate());
+  }
+
+  getUpdated(){
+    this.update.emit(true);
   }
 
 }
