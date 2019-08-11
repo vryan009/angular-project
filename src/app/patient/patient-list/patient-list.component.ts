@@ -23,11 +23,14 @@ export class PatientListComponent implements OnInit {
   
   onSelectPatient(patient: Patient) {
     this.selectedPatient = patient;
-    console.log("selected Patient: " + this.selectedPatient.getFirstName());
+    // console.log("selected Patient: " + this.selectedPatient.getFirstName());
   }
 
   updatePatientsList(){
     this.patients = this.patientService.retrievePatientsList();
+
+    //quick fix for null pointer on deletion, should be handled by routing
+    this.selectedPatient = this.patients[0];
   }
 
 }

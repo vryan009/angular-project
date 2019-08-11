@@ -20,6 +20,7 @@ import { PatientDetailsComponent } from './patient/patient-details/patient-detai
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
 import { MockPatientService } from './service/mock-patient.service';
 import { PatientService } from './service/patient.service';
+import { UtilityService } from './service/utility.service';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { PatientService } from './service/patient.service';
     FormsModule,
     NgbModule
   ],
-  providers: [MockPatientService, PatientService],
+  providers: [MockPatientService, PatientService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

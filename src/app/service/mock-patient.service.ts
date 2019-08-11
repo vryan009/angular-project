@@ -59,4 +59,27 @@ export class MockPatientService {
    getMockPatients(): Patient[]{
      return this.mockPatients;
    }
+
+   deleteMockPatient(p: Patient): void {
+    this.patient = p;
+    //set default index to -1 (not found)
+    let index = -1;
+
+    //retrieve index element positioning in the array based on ID
+    this.mockPatients.find(
+      (patient, id) => {
+        if(patient.getId() === this.patient.getId()){
+          index = id;
+        }
+      }
+    );
+
+    //delete from the mock patient list based on the retrieved positioning index
+    if (index >= -1) {
+      this.mockPatients.splice(index, 1);
+    }
+
+    //clear patient data
+    this.patient = null;
+   }
 }

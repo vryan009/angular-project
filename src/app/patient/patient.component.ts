@@ -14,8 +14,8 @@ export class PatientComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log("On init patient: " + this.patient.getFirstName());
-    console.log("On init patient: " + this.patient.getBirthDate());
+    // console.log("On init patient: " + this.patient.getFirstName());
+    // console.log("On init patient: " + this.patient.getBirthDate());
   }
 
   callOutputEmitter(isSubmitted: boolean){

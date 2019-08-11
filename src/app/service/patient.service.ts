@@ -31,8 +31,14 @@ export class PatientService {
     this.patient = p;
     this.patientsList.find(patient => patient.getId() == this.patient.getId()).setFirstName(this.patient.getFirstName());
     this.patientsList.find(patient => patient.getId() == this.patient.getId()).setLastName(this.patient.getLastName());
-    
-    console.log("INSIDE SERVICE: NEW NAME" + this.patientsList.find(patient => patient.getId() == this.patient.getId()).getFirstName());
+  }
+
+  deletePatient(p: Patient) {
+    this.mockPatientService.deleteMockPatient(p);
+    this.patientsList = this.mockPatientService.getMockPatients();
+
+    //reset currently selected patient
+    this.patient = null;
   }
 
 }

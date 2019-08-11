@@ -56,8 +56,14 @@
 
 <hr>
 <form class="" style="float:right">
-  <button type="button" class="btn btn-default mr-2">Cancel</button>
+  <!-- <button type="button" class="btn btn-default mr-2">Cancel</button> -->
   <!-- <button (click)="onSave()" type="submit" class="btn btn-primary mr-2">Save</button> -->
-  <app-gen-button [buttonDisplayName]="buttonDisplayName" [isButtonDisabled]="isButtonDisabled" (emitSubmit)="onSave()"></app-gen-button>
+  <app-gen-button [buttonDisplayName]="BUTTON_DISPLAY_NAME_CANCEL" [buttonClass]="BUTTON_CLASS_CANCEL" [isButtonDisabled]="isButtonDisabled" (emitSubmit)="onCancel()"></app-gen-button>
+  <!-- temporary spacing divider -->
+  <div class="divider"></div>
+  <app-gen-button [buttonDisplayName]="BUTTON_DISPLAY_NAME_DELETE" [buttonClass]="BUTTON_CLASS_DELETE" [isButtonDisabled]="isButtonDisabled" (emitSubmit)="onDelete()"></app-gen-button>
+  <!-- temporary spacing divider -->
+  <div class="divider"></div>
+  <app-gen-button [buttonDisplayName]="BUTTON_DISPLAY_NAME_SUBMIT" [buttonClass]="BUTTON_CLASS_SUBMIT" [isButtonDisabled]="isButtonDisabled" (emitSubmit)="onSave()"></app-gen-button>
   
 </form>

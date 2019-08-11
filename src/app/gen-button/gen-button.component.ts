@@ -8,6 +8,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class GenButtonComponent implements OnInit {
 
   @Input() buttonDisplayName : String;
+  @Input() buttonClass: String;
   @Input() isButtonDisabled: boolean;
   @Output() emitSubmit = new EventEmitter<boolean>();
 
@@ -16,9 +17,6 @@ export class GenButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("Submitted?: " + this.submit);
-    console.log("display name: " + this.buttonDisplayName);
-    console.log("disabled?: " + this.isButtonDisabled);
   }
 
   onSubmit(){
