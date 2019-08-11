@@ -9,7 +9,7 @@ import { Patient } from './patient';
 export class PatientComponent implements OnInit {
 
   @Input() patient: Patient;
-  @Output() update = new EventEmitter<boolean>();
+  @Output() emitSubmit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {}
 
@@ -18,8 +18,8 @@ export class PatientComponent implements OnInit {
     console.log("On init patient: " + this.patient.getBirthDate());
   }
 
-  getUpdated(){
-    this.update.emit(true);
+  callOutputEmitter(isSubmitted: boolean){
+    this.emitSubmit.emit(isSubmitted);
   }
 
 }

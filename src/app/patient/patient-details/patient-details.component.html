@@ -57,6 +57,7 @@
 <hr>
 <form class="" style="float:right">
   <button type="button" class="btn btn-default mr-2">Cancel</button>
-  <!-- <button type="button" class="btn btn-danger">Save</button> -->
-  <button (click)="onSave()" type="submit" class="btn btn-primary mr-2">Save</button>
+  <!-- <button (click)="onSave()" type="submit" class="btn btn-primary mr-2">Save</button> -->
+  <app-gen-button [buttonDisplayName]="buttonDisplayName" [isButtonDisabled]="isButtonDisabled" (emitSubmit)="onSave()"></app-gen-button>
+  
 </form>

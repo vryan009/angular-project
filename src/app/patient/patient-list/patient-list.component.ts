@@ -26,7 +26,7 @@ export class PatientListComponent implements OnInit {
     console.log("selected Patient: " + this.selectedPatient.getFirstName());
   }
 
-  getUpdated(){
+  updatePatientsList(){
     this.patients = this.patientService.retrievePatientsList();
   }
 
